@@ -1,0 +1,28 @@
+name: validate
+on:
+  push:
+  pull_request:
+
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Front matter present
+        run: |
+          fail=0
+          for f in skills/*/SKILL.md; do
+            head -1 "$f" | grep -q '^---$' || { echo "missing front matter: $f"; fail=1; }
+            grep -q '^name: ' "$f" || { echo "missing name: $f"; fail=1; }
+            grep -q '^description: ' "$f" || { echo "missing description: $f"; fail=1; }
+          done
+          exit $fail
+      - name: Prose rules
+        run: |
+          if grep -rnP "[\x{2014}\x{2013}]" --include="*.md" .; then echo "em or en dash found"; exit 1; fi
+          if grep -rnE "(^|[^-])--([^-]|$)" --include="*.md" .; then echo "double hyphen found"; exit 1; fi
+      - name: Required files
+        run: |
+          for f in README.md LICENSE TRADEMARK.md .claude-plugin/plugin.json; do
+            test -f "$f" || { echo "missing $f"; exit 1; }
+          done
