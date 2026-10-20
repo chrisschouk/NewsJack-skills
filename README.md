@@ -54,6 +54,11 @@ that refusal is the point.
 These skills are free and stay free. [NewsJack](https://newsjack.cc) adds
 continuous monitoring, scheduled briefings, saved history, and posting flows.
 
+## More skill packs
+
+- [SpotCheck-skills](https://github.com/chrisschouk/SpotCheck-skills): vet a playlist before you pay a curator.
+- [TAP-skills](https://github.com/chrisschouk/TAP-skills): run a release campaign end to end.
+
 ## Licence
 
 MIT. See `LICENSE`. The NewsJack name and logo are not covered. See `TRADEMARK.md`.
