@@ -1,0 +1,9 @@
+{
+  "name": "newsjack-skills",
+  "description": "Agent skills for music-industry newsjacking: monitor, standing check, angle, draft, roast.",
+  "version": "0.1.0",
+  "author": "Chris Schofield",
+  "homepage": "https://newsjack.cc",
+  "repository": "https://github.com/chrisschouk/newsjack-skills",
+  "license": "MIT"
+}
