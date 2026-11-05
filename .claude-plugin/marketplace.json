@@ -1,0 +1,22 @@
+{
+  "name": "newsjack-skills",
+  "owner": {
+    "name": "Chris Schofield",
+    "email": "chris@totalaudiopromo.com"
+  },
+  "description": "NewsJack skills for music-industry newsjacking.",
+  "plugins": [
+    {
+      "name": "newsjack-skills",
+      "source": "./",
+      "description": "Monitor the trade press, check standing, find the angle, draft and roast the post, then connect to NewsJack over MCP.",
+      "version": "0.2.0",
+      "author": { "name": "Chris Schofield" },
+      "homepage": "https://newsjack.cc",
+      "repository": "https://github.com/chrisschouk/NewsJack-skills",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["newsjacking", "music-industry", "pr", "mcp"]
+    }
+  ]
+}

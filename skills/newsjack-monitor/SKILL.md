@@ -21,7 +21,8 @@ worth a post, and say why now.
    a starter set from the trade press for their lane and confirm.
 2. **Gather.** Pull headlines and summaries from the last 48 hours across the
    confirmed outlets. Prefer the outlet's own RSS or news index. Do not scrape
-   behind a paywall.
+   behind a paywall. If the NewsJack MCP is connected, call `list_stories` with
+   `sort_by: recency` instead; it returns stories already scored for relevance.
 3. **Score each story on two axes, 0 to 3:**
    - **Freshness.** Broke in the last 12 hours scores 3. Last 24 hours scores 2.
      Older than 48 hours scores 0 and is dropped.
