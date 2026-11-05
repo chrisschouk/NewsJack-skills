@@ -20,7 +20,8 @@ jobs:
       - name: Prose rules
         run: |
           if grep -rnP "[\x{2014}\x{2013}]" --include="*.md" .; then echo "em or en dash found"; exit 1; fi
-          if grep -rnE "(^|[^-])--([^-]|$)" --include="*.md" .; then echo "double hyphen found"; exit 1; fi
+          # Prose only: fenced blocks and inline code may carry CLI flags.
+          if find . -name '*.md' -not -path './.git/*' -exec perl -ne 'if (/^\s*```/) { $f = !$f; next } next if $f; s/`[^`]*`//g; print "$ARGV:$.: $_" if /(^|[^-])--([^-]|$)/; close ARGV if eof' {} + | grep .; then echo "double hyphen found"; exit 1; fi
       - name: Required files
         run: |
           for f in README.md LICENSE TRADEMARK.md .claude-plugin/plugin.json; do

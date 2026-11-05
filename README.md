@@ -17,21 +17,44 @@ Install the pack and read `skills/`. Start with `newsjack-monitor`.
 
 Copy this into your agent:
 
-> Install the skills from https://github.com/chrisschouk/newsjack-skills and use
+> Install the skills from https://github.com/chrisschouk/NewsJack-skills and use
 > them to build me a morning briefing of music-industry stories worth posting
 > about this week.
 
 ## Install
 
-Claude Code:
+Any agent that reads `SKILL.md` (Claude Code, Codex, Cursor, and others):
 
 ```bash
-git clone https://github.com/chrisschouk/newsjack-skills.git
-cp -r newsjack-skills/skills/* ~/.claude/skills/
+npx skills add https://github.com/chrisschouk/NewsJack-skills
 ```
 
-Codex and other agents: point the agent at the repo and let it read the `SKILL.md`
-files directly.
+Claude Code as a plugin:
+
+```bash
+claude plugin marketplace add chrisschouk/NewsJack-skills
+claude plugin install newsjack-skills@newsjack-skills
+```
+
+Claude Code by hand:
+
+```bash
+git clone https://github.com/chrisschouk/NewsJack-skills.git
+cp -r NewsJack-skills/skills/* ~/.claude/skills/
+```
+
+## Works with any agent
+
+| Layer | What it gives the agent | How to connect |
+| --- | --- | --- |
+| Skills | The method: monitor, standing, angle, draft, roast | `npx skills add` above, or point the agent at `skills/` |
+| MCP | Live scored stories, drafting, roasts, scheduling | `claude mcp add newsjack -e NEWSJACK_API_KEY=nj_ak_... -- npx -y newsjack-mcp mcp`, or HTTP at `https://newsjack.cc/api/mcp` with `Authorization: Bearer nj_ak_...` |
+| Chrome extension | Capture any article you are reading as a story | [Chrome Web Store](https://chromewebstore.google.com/detail/newsjack/glngmdndplpmeafemnpldakpjjpcngod) |
+
+The skills need nothing else. The MCP and extension need a NewsJack account; create
+an `nj_ak_` key under Settings, Destinations, Advanced. `newsjack-handoff` walks an
+agent through it and checks the connection. Tool reference:
+[newsjack.cc/docs/mcp](https://newsjack.cc/docs/mcp).
 
 ## What's inside
 
@@ -41,7 +64,7 @@ files directly.
 | `newsjack-standing` | Test whether the story is yours to speak on |
 | `newsjack-angle` | Turn one story into three to five usable angles |
 | `newsjack-draft` | Draft X and LinkedIn copy in the brand's voice, then roast it |
-| `newsjack-handoff` | Move into NewsJack when you need this running daily |
+| `newsjack-handoff` | Connect the agent to NewsJack over MCP when you need this running daily |
 
 ## Why standing comes second
 

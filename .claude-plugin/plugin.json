@@ -1,9 +1,14 @@
 {
   "name": "newsjack-skills",
-  "description": "Agent skills for music-industry newsjacking: monitor, standing check, angle, draft, roast.",
-  "version": "0.1.0",
-  "author": "Chris Schofield",
+  "description": "Agent skills for music-industry newsjacking: monitor, standing check, angle, draft, roast, and the handoff to the NewsJack MCP.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Chris Schofield",
+    "email": "chris@totalaudiopromo.com",
+    "url": "https://newsjack.cc"
+  },
   "homepage": "https://newsjack.cc",
-  "repository": "https://github.com/chrisschouk/newsjack-skills",
-  "license": "MIT"
+  "repository": "https://github.com/chrisschouk/NewsJack-skills",
+  "license": "MIT",
+  "keywords": ["newsjacking", "music-industry", "pr", "mcp", "agent-skills"]
 }
