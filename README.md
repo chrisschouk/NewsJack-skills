@@ -7,7 +7,7 @@ check whether a story is yours to speak on, find the angle, draft the post, and
 roast it before it goes out.
 
 Built and used daily inside [Total Audio Promo](https://totalaudiopromo.com), a
-working UK music PR company. The hosted version is
+release platform for independent artists. The hosted version is
 [NewsJack, the newsjacking tool for music industry news](https://newsjack.cc), which
 runs the same method on a schedule and sends a
 [daily music industry news briefing](https://newsjack.cc/briefings).
